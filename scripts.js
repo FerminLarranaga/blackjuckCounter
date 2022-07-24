@@ -1,28 +1,29 @@
 let currentVal = 0;
-let cardsLeft = 6*52;
+let cardsLeft = 2*52;
 let realVal = 0;
 let currentValP = document.getElementById('currentVal');
 let realValP = document.getElementById('realVal');
-currentValP.innerText = 'currentVal';
+let cardsLeftP = document.getElementById("cardsLeft");
 
 function addOne () {
     console.log('hi')
     currentVal++;
     cardsLeft--;
-    realVal = currentVal/Math.ceil(cardsLeft/52);
-    currentValP.innerText = currentVal;
-    realValP.innerText = realVal;
+    updateVals();
 }
 function addZero(){
     cardsLeft--;
-    realVal = currentVal/Math.ceil(cardsLeft/52);
-    currentValP.innerText = currentVal;
-    realValP.innerText = realVal;
+    updateVals();
 }
 function substractOne(){
     currentVal--;
     cardsLeft--;
-    realVal = currentVal/Math.ceil(cardsLeft/52);
-    currentValP.innerText = currentVal;
-    realValP.innerText = realVal;
+    updateVals();
+}
+
+function updateVals(){
+    realVal = currentVal/Math.round(cardsLeft/52);
+    currentValP.innerText = "currentVal: " + currentVal;
+    realValP.innerText = "realVal: " + realVal;
+    cardsLeftP.innerText = "Cards Left: " + cardsLeft;
 }
