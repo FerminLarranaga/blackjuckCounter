@@ -22,7 +22,7 @@ function substractOne(){
 }
 
 function updateVals(){
-    realVal = (currentVal/Math.round(cardsLeft/52)).toFixed(3);
+    realVal = (currentVal/(cardsLeft/52).toFixed(3)).toFixed(3);
     currentValP.innerText = "currentVal: " + currentVal;
     realValP.innerText = "realVal: " + realVal;
     cardsLeftP.innerText = "Cards Left: " + cardsLeft;
